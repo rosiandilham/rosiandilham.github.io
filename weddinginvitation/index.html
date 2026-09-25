@@ -668,22 +668,21 @@ document.addEventListener("click", function startWeddingMusic() {
   document.removeEventListener("click", startWeddingMusic);
 }, { once: true });
 </script>
-  <script>
+<script>
 const openingCover = document.getElementById("openingCover");
 const openInvitation = document.getElementById("openInvitation");
 const weddingMusic = document.getElementById("weddingMusic");
 
 openInvitation.addEventListener("click", function(){
 
-  // Play musik setelah user melakukan interaksi
+  weddingMusic.currentTime = 5;
+
   weddingMusic.play().catch(function(error){
     console.log("Music gagal diputar:", error);
   });
 
-  // Hilangkan opening cover
   openingCover.classList.add("hide");
 
-  // Kembalikan scroll
   document.body.style.overflow = "";
 });
 </script>
