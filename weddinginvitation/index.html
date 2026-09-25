@@ -625,6 +625,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
   </script>
+<script>
+document.addEventListener("click", function startWeddingMusic() {
+  const music = document.getElementById("weddingMusic");
 
+  if (music) {
+    music.play().then(() => {
+      console.log("Wedding music started");
+    }).catch((error) => {
+      console.log("Music gagal diputar:", error);
+    });
+  }
+
+  document.removeEventListener("click", startWeddingMusic);
+}, { once: true });
+</script>
 </body>
 </html>
