@@ -932,9 +932,19 @@ img{
     margin-top:25px;
   }
 
+  /* =========================================================
+     QS. AR RUM 21 — MOBILE
+     Disesuaikan mengikuti layout Canva:
+     judul → jarak → foto lebar → jarak → paragraf
+     ========================================================= */
+
   .verse-section{
-    padding:110px 0 80px;
+    padding:140px 0 80px;
     min-height:auto;
+  }
+
+  .verse-grid{
+    gap:0;
   }
 
   .verse-label,
@@ -946,7 +956,36 @@ img{
     font-size:42px;
   }
 
-  .verse-copy,
+  .verse-label{
+    text-align:center;
+    margin:0 0 45px;
+  }
+
+  .portrait-card{
+    width:100%;
+    height:auto;
+    margin:0 auto;
+    overflow:hidden;
+  }
+
+  .portrait-card img{
+    width:100%;
+    height:auto;
+    aspect-ratio:1.36 / 1;
+    object-fit:cover;
+    object-position:center 62%;
+    filter:grayscale(100%);
+  }
+
+  .verse-copy{
+    width:calc(100% - 110px);
+    margin:38px auto 0;
+    font-size:15px;
+    line-height:1.43;
+    text-align:justify;
+    text-align-last:left;
+  }
+
   .ceremony-card p,
   .schedule-row,
   .thanks-copy,
