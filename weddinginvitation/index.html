@@ -30,7 +30,35 @@
 </head>
 <audio id="weddingMusic" loop>
   <source src="assets/dia_audio.mp3" type="audio/mpeg">
-</audio>
+</audio
+  <!-- OPENING COVER -->
+<div id="openingCover" class="opening-cover">
+
+  <img
+    src="assets/fe111bddb2cf8d14d95da9e7270fcfce.jpg"
+    alt="Rosi dan Ilham"
+    class="opening-photo"
+  >
+
+  <div class="opening-overlay"></div>
+
+  <div class="opening-content">
+
+    <div class="opening-title">
+      ROSI & ILHAM
+    </div>
+
+    <div class="opening-date">
+      Sabtu, 05 Desember 2026
+    </div>
+
+    <button id="openInvitation" class="open-button">
+      BUKA UNDANGAN
+    </button>
+
+  </div>
+
+</div>
 <body>
   <main class="page">
 
@@ -639,6 +667,25 @@ document.addEventListener("click", function startWeddingMusic() {
 
   document.removeEventListener("click", startWeddingMusic);
 }, { once: true });
+</script>
+  <script>
+const openingCover = document.getElementById("openingCover");
+const openInvitation = document.getElementById("openInvitation");
+const weddingMusic = document.getElementById("weddingMusic");
+
+openInvitation.addEventListener("click", function(){
+
+  // Play musik setelah user melakukan interaksi
+  weddingMusic.play().catch(function(error){
+    console.log("Music gagal diputar:", error);
+  });
+
+  // Hilangkan opening cover
+  openingCover.classList.add("hide");
+
+  // Kembalikan scroll
+  document.body.style.overflow = "";
+});
 </script>
 </body>
 </html>
