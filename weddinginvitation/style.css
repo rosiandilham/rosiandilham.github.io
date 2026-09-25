@@ -979,7 +979,7 @@ img{
     object-fit:cover !important;
 
     /* crop foto */
-    object-position:center 62% !important;
+    object-position:center 30% !important;
 
     filter:grayscale(100%) !important;
   }
