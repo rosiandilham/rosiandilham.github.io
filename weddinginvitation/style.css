@@ -939,51 +939,60 @@ img{
      ========================================================= */
 
   .verse-section{
-    padding:140px 0 80px;
-    min-height:auto;
+    padding:140px 0 80px !important;
+    min-height:auto !important;
   }
 
   .verse-grid{
-    gap:0;
-  }
-
-  .verse-label,
-  .section-title,
-  .schedule-title,
-  .notes-title,
-  .location-title,
-  .guestbook-title{
-    font-size:42px;
+    display:flex !important;
+    flex-direction:column !important;
+    gap:0 !important;
+    width:100% !important;
   }
 
   .verse-label{
-    text-align:center;
-    margin:0 0 45px;
+    width:100% !important;
+    font-size:42px !important;
+    line-height:1 !important;
+    text-align:center !important;
+
+    /* posisi judul seperti Canva */
+    margin:0 0 45px !important;
   }
 
   .portrait-card{
-    width:100%;
-    height:auto;
-    margin:0 auto;
-    overflow:hidden;
+    width:100% !important;
+    height:auto !important;
+    margin:0 !important;
+    padding:0 !important;
+    overflow:hidden !important;
   }
 
   .portrait-card img{
-    width:100%;
-    height:auto;
-    aspect-ratio:1.36 / 1;
-    object-fit:cover;
-    object-position:center 62%;
-    filter:grayscale(100%);
+    display:block !important;
+    width:100% !important;
+    height:auto !important;
+
+    /* ukuran frame mendekati Canva */
+    aspect-ratio:1.36 / 1 !important;
+
+    object-fit:cover !important;
+
+    /* crop foto */
+    object-position:center 62% !important;
+
+    filter:grayscale(100%) !important;
   }
 
   .verse-copy{
-    width:calc(100% - 110px);
-    margin:38px auto 0;
-    font-size:15px;
-    line-height:1.43;
-    text-align:justify;
-    text-align-last:left;
+    width:calc(100% - 110px) !important;
+    margin:38px auto 0 !important;
+
+    font-size:15px !important;
+    line-height:1.43 !important;
+
+    text-align:justify !important;
+    text-align-last:left !important;
   }
 
   .ceremony-card p,
