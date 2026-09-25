@@ -1,0 +1,1046 @@
+@font-face{font-family:CanvaTitle;src:url('assets/fonts/bcf845bc9976372da10183c67cc300c0.woff') format('woff');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:CanvaSans;src:url('assets/fonts/834f64ff415fb8f4f5d92d8fd40507e9.woff') format('woff');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:CanvaSansAlt;src:url('assets/fonts/532d9b48e4e0325db9fdaebe34155baa.woff') format('woff');font-weight:700;font-style:normal;font-display:swap}
+
+:root{
+  --white:#f3f3f3;
+  --muted:#cfcfcf;
+  --line:#8e8e8e;
+  --max:1140px
+}
+
+*{box-sizing:border-box}
+
+html{
+  scroll-behavior:smooth;
+}
+
+html,body{
+  margin:0;
+  padding:0;
+  background:#000;
+  color:var(--white);
+}
+
+body{
+  font-family:CanvaSans,Arial,sans-serif;
+}
+
+img{
+  display:block;
+  max-width:100%;
+}
+
+.page{
+  width:100%;
+  overflow:hidden;
+  background:#000;
+}
+
+.content-width{
+  width:min(var(--max),calc(100% - 80px));
+  margin-inline:auto;
+}
+
+.section{
+  position:relative;
+  background:#000;
+}
+
+
+/* =========================================================
+   COVER
+   ========================================================= */
+
+.hero{
+  position:relative;
+  height:660px;
+  overflow:hidden;
+  background:#000;
+}
+
+.hero-photo{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+
+  /* INI POSISI YANG LU UDAH BENER */
+  object-position:center 25%;
+
+  filter:grayscale(100%);
+
+  animation:heroZoom 2.2s ease-out both;
+}
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.43);
+
+  animation:heroOverlay 1.5s ease-out both;
+}
+
+.hero-content{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  transform:translateY(8%);
+}
+
+.hero h1{
+  margin:0;
+  color:var(--white);
+  font-family:CanvaTitle,serif;
+  font-size:108px;
+  font-weight:400;
+  line-height:.95;
+  letter-spacing:.25em;
+  white-space:nowrap;
+  display:flex;
+  align-items:center;
+
+  animation:heroTitle 1.3s cubic-bezier(.22,1,.36,1) .25s both;
+}
+
+.hero h1 span{
+  display:inline-block;
+}
+
+.hero h1 .amp{
+  margin:0 .10em;
+  font-size:.96em;
+}
+
+.event-date{
+  margin-top:42px;
+  text-align:center;
+  font-size:18px;
+  line-height:1.32;
+
+  animation:heroDate 1.1s cubic-bezier(.22,1,.36,1) .65s both;
+}
+
+.event-date div+div{
+  margin-top:3px;
+}
+
+
+/* =========================================================
+   COMMON
+   ========================================================= */
+
+.section-title{
+  font-family:CanvaTitle,serif;
+  font-weight:400;
+  font-size:52px;
+  line-height:1;
+  margin:0;
+}
+
+.center{
+  text-align:center;
+}
+
+.decor{
+  position:absolute;
+  width:330px;
+  opacity:.66;
+  pointer-events:none;
+}
+
+.decor-top-left{
+  left:9%;
+  top:0;
+}
+
+.decor-bottom-right{
+  right:7%;
+  bottom:50px;
+  transform:rotate(180deg);
+}
+
+
+/* =========================================================
+   VERSE
+   ========================================================= */
+
+.verse-section{
+  padding:210px 0 120px;
+  min-height:1300px;
+}
+
+.verse-grid{
+  display:grid;
+  grid-template-columns:320px 390px 1fr;
+  column-gap:40px;
+  align-items:center;
+}
+
+.verse-label{
+  font-family:CanvaTitle,serif;
+  font-size:42px;
+  line-height:1;
+  white-space:nowrap;
+  letter-spacing:0;
+}
+
+.portrait-card{
+  width:370px;
+  height:287px;
+  overflow:hidden;
+}
+
+.portrait-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 30%;
+  filter:grayscale(100%);
+}
+.verse-copy{
+  font-size:16px;
+  line-height:1.42;
+  margin:0;
+  text-align:justify;
+  text-align-last:left;
+}
+
+.split-photo-row{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:150px;
+  align-items:center;
+  margin-top:170px;
+}
+
+.large-couple{
+  width:100%;
+  height:680px;
+  object-fit:cover;
+  filter:grayscale(100%);
+}
+
+.flower-black{
+  width:100%;
+  height:360px;
+  object-fit:contain;
+  filter:grayscale(100%);
+}
+
+
+/* =========================================================
+   CEREMONY
+   ========================================================= */
+
+.ceremony-section{
+  padding:40px 0 180px;
+}
+
+.ceremony-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:90px;
+  margin-top:120px;
+}
+
+.ceremony-card{
+  text-align:center;
+}
+
+.ceremony-card img{
+  height:135px;
+  width:110px;
+  object-fit:contain;
+  filter:invert(1);
+  margin:0 auto 30px;
+}
+
+.ceremony-card h3{
+  font-size:28px;
+  font-weight:400;
+  margin:0 0 18px;
+}
+
+.ceremony-card p{
+  font-size:18px;
+  line-height:1.35;
+  margin:0 auto;
+  max-width:300px;
+}
+
+
+/* =========================================================
+   SCHEDULE
+   ========================================================= */
+
+.schedule-section{
+  padding:30px 0 180px;
+}
+
+.schedule-grid{
+  display:grid;
+  grid-template-columns:1fr 1.2fr;
+  grid-template-areas:
+    'title photo'
+    'rows photo';
+  column-gap:100px;
+  row-gap:110px;
+  align-items:start;
+}
+
+.schedule-title{
+  grid-area:title;
+  font-family:CanvaTitle,serif;
+  font-size:54px;
+  line-height:1.05;
+  padding-top:10px;
+}
+
+.schedule-side{
+  grid-area:rows;
+}
+
+.schedule-photo{
+  grid-area:photo;
+  width:100%;
+  height:520px;
+  object-fit:cover;
+  filter:grayscale(100%);
+}
+
+.schedule-row{
+  display:grid;
+  grid-template-columns:190px 1fr;
+  gap:30px;
+  padding:20px 0;
+  border-bottom:1px solid var(--line);
+  font-size:18px;
+}
+
+.schedule-row strong{
+  font-weight:400;
+}
+
+
+/* =========================================================
+   THANKS / REKENING
+   ========================================================= */
+
+.thanks-section{
+  padding:50px 0 190px;
+}
+
+.thanks-grid{
+  display:grid;
+  grid-template-columns:230px 1fr 230px;
+  gap:70px;
+  align-items:start;
+}
+
+.thanks-art img{
+  width:190px;
+  height:220px;
+  object-fit:contain;
+  filter:grayscale(100%);
+  margin:auto;
+}
+
+.thanks-title{
+  font-size:28px;
+  margin-top:30px;
+}
+
+.thanks-copy{
+  text-align:center;
+  font-size:18px;
+  line-height:1.38;
+}
+
+.thanks-copy p{
+  margin:0 0 25px;
+}
+
+.bank-block{
+  font-size:19px;
+  line-height:1.25;
+}
+
+.bank-block p{
+  margin-bottom:25px;
+}
+
+.thanks-side-photo{
+  width:230px;
+  height:230px;
+  object-fit:cover;
+  filter:grayscale(100%);
+  margin-top:15px;
+}
+
+
+/* =========================================================
+   COPY REKENING
+   ========================================================= */
+
+.copy-btn{
+  border:1px solid #888;
+  background:transparent;
+  color:#fff;
+  border-radius:5px;
+  padding:4px 9px;
+  margin-left:7px;
+  font-size:13px;
+  cursor:pointer;
+  transition:.2s ease;
+}
+
+.copy-btn:hover{
+  background:#fff;
+  color:#000;
+}
+
+.copy-btn.copied{
+  background:#fff;
+  color:#000;
+  border-color:#fff;
+}
+
+.rekening-number{
+  white-space:nowrap;
+}
+
+
+/* =========================================================
+   NOTES
+   ========================================================= */
+
+.notes-section{
+  padding:40px 0 160px;
+}
+
+.notes-grid{
+  display:grid;
+  grid-template-columns:330px 1fr;
+  gap:80px;
+}
+
+.notes-title{
+  font-family:CanvaTitle,serif;
+  font-size:54px;
+  line-height:1.05;
+  padding-top:10px;
+}
+
+.notes-title span{
+  display:block;
+}
+
+.notes-list{
+  display:flex;
+  flex-direction:column;
+}
+
+.note-item{
+  display:grid;
+  grid-template-columns:60px 1fr;
+  gap:0;
+  border-bottom:1px solid var(--line);
+  padding:0 0 34px;
+  margin-bottom:10px;
+}
+
+.note-number{
+  font-size:24px;
+}
+
+.note-item h3{
+  font-size:25px;
+  font-weight:400;
+  margin:0 0 12px;
+}
+
+.note-item p{
+  font-size:18px;
+  line-height:1.4;
+  margin:0;
+}
+
+
+/* =========================================================
+   LOCATION
+   ========================================================= */
+
+.location-section{
+  padding-bottom:170px;
+}
+
+.location-photo-band{
+  height:450px;
+  overflow:hidden;
+}
+
+.location-photo-band img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 44%;
+  filter:grayscale(100%);
+}
+
+.location-grid{
+  display:grid;
+  grid-template-columns:1fr 1.2fr 1.2fr;
+  gap:70px;
+  align-items:center;
+  padding-top:70px;
+}
+
+.location-title{
+  font-family:CanvaTitle,serif;
+  font-size:54px;
+  line-height:1.05;
+}
+
+.location-action{
+  text-align:center;
+}
+
+.location-action h3{
+  font-size:22px;
+  font-weight:400;
+  margin:0 0 18px;
+}
+
+.map-icon{
+  width:70px;
+  margin:0 auto 12px;
+}
+
+.pill-button{
+  display:inline-block;
+  background:#6c6c6c;
+  color:#fff;
+  text-decoration:none;
+  border-radius:999px;
+  padding:13px 20px;
+  font-size:16px;
+}
+
+.location-message{
+  text-align:center;
+  font-size:17px;
+  line-height:1.35;
+}
+
+.location-message strong{
+  font-weight:700;
+}
+
+
+/* =========================================================
+   GUESTBOOK
+   ========================================================= */
+
+.guestbook-section{
+  padding:80px 0 0;
+  min-height:920px;
+}
+
+.guestbook-grid{
+  display:grid;
+  grid-template-columns:300px 1fr;
+  gap:90px;
+  align-items:start;
+}
+
+.guestbook-title{
+  font-family:CanvaTitle,serif;
+  font-size:54px;
+  line-height:1.05;
+  padding-top:10px;
+}
+
+/* PADLET ASLI */
+.padlet-frame{
+  width:min(560px,100%);
+  justify-self:center;
+  overflow:hidden;
+  border-radius:2px;
+  background:#F4F4F4;
+}
+
+.padlet-embed{
+  width:100%;
+  overflow:hidden;
+}
+
+.padlet-embed iframe{
+  width:100%;
+  height:608px;
+  display:block;
+  border:0;
+  padding:0;
+  margin:0;
+}
+
+
+/* =========================================================
+   ANIMATION — V9
+   ========================================================= */
+
+/* Section muncul saat discroll */
+.section{
+  opacity:0;
+  transform:translateY(35px);
+  transition:
+    opacity .9s ease,
+    transform .9s cubic-bezier(.22,1,.36,1);
+}
+
+.section.is-visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+
+/* Anak section muncul sedikit bergantian */
+.section.is-visible .section-title,
+.section.is-visible .verse-label,
+.section.is-visible .schedule-title,
+.section.is-visible .notes-title,
+.section.is-visible .location-title,
+.section.is-visible .guestbook-title{
+  animation:sectionTitleIn .9s cubic-bezier(.22,1,.36,1) both;
+}
+
+.section.is-visible .verse-copy,
+.section.is-visible .location-message,
+.section.is-visible .thanks-copy{
+  animation:fadeUp .9s cubic-bezier(.22,1,.36,1) .15s both;
+}
+
+.section.is-visible .portrait-card,
+.section.is-visible .large-couple,
+.section.is-visible .flower-black,
+.section.is-visible .schedule-photo,
+.section.is-visible .thanks-side-photo{
+  animation:fadeUp .9s cubic-bezier(.22,1,.36,1) .25s both;
+}
+
+
+/* Ceremony satu-satu */
+.section.is-visible .ceremony-card:nth-child(1){
+  animation:fadeUp .8s cubic-bezier(.22,1,.36,1) .15s both;
+}
+
+.section.is-visible .ceremony-card:nth-child(2){
+  animation:fadeUp .8s cubic-bezier(.22,1,.36,1) .3s both;
+}
+
+.section.is-visible .ceremony-card:nth-child(3){
+  animation:fadeUp .8s cubic-bezier(.22,1,.36,1) .45s both;
+}
+
+
+/* Schedule rows */
+.section.is-visible .schedule-row{
+  animation:slideRight .7s cubic-bezier(.22,1,.36,1) both;
+}
+
+.section.is-visible .schedule-row:nth-child(1){
+  animation-delay:.1s;
+}
+
+.section.is-visible .schedule-row:nth-child(2){
+  animation-delay:.2s;
+}
+
+.section.is-visible .schedule-row:nth-child(3){
+  animation-delay:.3s;
+}
+
+.section.is-visible .schedule-row:nth-child(4){
+  animation-delay:.4s;
+}
+
+
+/* Notes */
+.section.is-visible .note-item{
+  animation:fadeUp .75s cubic-bezier(.22,1,.36,1) both;
+}
+
+.section.is-visible .note-item:nth-child(1){
+  animation-delay:.1s;
+}
+
+.section.is-visible .note-item:nth-child(2){
+  animation-delay:.25s;
+}
+
+.section.is-visible .note-item:nth-child(3){
+  animation-delay:.4s;
+}
+
+
+/* Cover animation */
+@keyframes heroZoom{
+  from{
+    transform:scale(1.06);
+  }
+  to{
+    transform:scale(1);
+  }
+}
+
+@keyframes heroOverlay{
+  from{
+    opacity:0;
+  }
+  to{
+    opacity:1;
+  }
+}
+
+@keyframes heroTitle{
+  from{
+    opacity:0;
+    transform:translateY(35px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes heroDate{
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes sectionTitleIn{
+  from{
+    opacity:0;
+    transform:translateY(25px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(25px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes slideRight{
+  from{
+    opacity:0;
+    transform:translateX(-30px);
+  }
+  to{
+    opacity:1;
+    transform:translateX(0);
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:900px){
+
+  .content-width{
+    width:min(680px,calc(100% - 40px));
+  }
+
+  .hero{
+    height:660px;
+  }
+
+  .hero h1{
+    font-size:78px;
+    letter-spacing:.18em;
+  }
+
+  .event-date{
+    font-size:16px;
+    margin-top:34px;
+  }
+
+  .verse-section{
+    padding-top:150px;
+  }
+
+  .verse-grid,
+  .thanks-grid,
+  .notes-grid,
+  .location-grid,
+  .guestbook-grid{
+    grid-template-columns:1fr;
+  }
+
+  .verse-grid{
+    gap:35px;
+  }
+
+  .verse-label{
+    text-align:center;
+  }
+
+  .portrait-card img{
+    width:100%;
+    height:auto;
+  }
+
+  .verse-copy{
+  text-align:justify;
+  }
+
+  .split-photo-row{
+    grid-template-columns:1fr;
+    gap:50px;
+    margin-top:90px;
+  }
+
+  .large-couple{
+    height:520px;
+  }
+
+  .flower-black{
+    height:280px;
+  }
+
+  .ceremony-grid{
+    grid-template-columns:1fr;
+    gap:70px;
+    margin-top:90px;
+  }
+
+  .schedule-grid{
+    grid-template-columns:1fr;
+    grid-template-areas:
+      'title'
+      'photo'
+      'rows';
+    gap:55px;
+  }
+
+  .schedule-photo{
+    height:430px;
+  }
+
+  .schedule-title{
+    text-align:center;
+  }
+
+  .thanks-grid{
+    gap:40px;
+  }
+
+  .thanks-art{
+    text-align:center;
+  }
+
+  .thanks-side-photo{
+    justify-self:center;
+  }
+
+  .notes-grid{
+    gap:55px;
+  }
+
+  .notes-title{
+    text-align:center;
+  }
+
+  .location-grid{
+    gap:40px;
+    text-align:center;
+  }
+
+  .location-photo-band{
+    height:360px;
+  }
+
+  .guestbook-grid{
+    gap:45px;
+  }
+
+  .guestbook-title{
+    text-align:center;
+  }
+
+  .padlet-frame{
+    justify-self:center;
+  }
+
+  .decor{
+    width:260px;
+  }
+
+  .decor-top-left{
+    left:-30px;
+  }
+
+  .decor-bottom-right{
+    right:-50px;
+  }
+}
+
+
+@media(max-width:600px){
+
+  .content-width{
+    width:calc(100% - 28px);
+  }
+
+  .hero{
+    height:650px;
+  }
+
+  .hero-content{
+    padding:15px;
+    transform:translateY(5%);
+  }
+
+  .hero h1{
+    font-size:48px;
+    letter-spacing:.12em;
+  }
+
+  .event-date{
+    font-size:14px;
+    margin-top:25px;
+  }
+
+  .verse-section{
+    padding:110px 0 80px;
+    min-height:auto;
+  }
+
+  .verse-label,
+  .section-title,
+  .schedule-title,
+  .notes-title,
+  .location-title,
+  .guestbook-title{
+    font-size:42px;
+  }
+
+  .verse-copy,
+  .ceremony-card p,
+  .schedule-row,
+  .thanks-copy,
+  .note-item p,
+  .location-message{
+    font-size:15px;
+  }
+
+  .large-couple{
+    height:420px;
+  }
+
+  .ceremony-section,
+  .schedule-section,
+  .thanks-section,
+  .notes-section{
+    padding-bottom:100px;
+  }
+
+  .ceremony-card h3{
+    font-size:24px;
+  }
+
+  .schedule-row{
+    grid-template-columns:125px 1fr;
+    gap:12px;
+  }
+
+  .thanks-grid{
+    grid-template-columns:1fr;
+  }
+
+  .thanks-side-photo{
+    width:200px;
+    height:200px;
+  }
+
+  .notes-list{
+    gap:10px;
+  }
+
+  .note-item{
+    grid-template-columns:48px 1fr;
+  }
+
+  .note-item h3{
+    font-size:21px;
+  }
+
+  .location-photo-band{
+    height:290px;
+  }
+
+  .location-grid{
+    padding-top:45px;
+  }
+
+  .padlet-frame{
+    min-height:580px;
+  }
+
+  .site-footer{
+    font-size:9px;
+  }
+
+  /* tombol copy jangan terlalu besar di HP */
+  .copy-btn{
+    font-size:12px;
+    padding:4px 8px;
+    margin-left:5px;
+  }
+}
+
+
+/* =========================================================
+   REDUCE MOTION
+   ========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+  html{
+    scroll-behavior:auto;
+  }
+
+  *,
+  *::before,
+  *::after{
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+  }
+
+  .section{
+    opacity:1;
+    transform:none;
+  }
+}
